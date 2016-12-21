@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 public class RealEstateActivity extends AppCompatActivity {
 
@@ -22,7 +23,8 @@ public class RealEstateActivity extends AppCompatActivity {
                     .beginTransaction()
                     .add(R.id.main_container, new RealEstateFragment())
                     .commit();
-
+        } else {
+            Toast.makeText(this,"network unavailable", Toast.LENGTH_LONG).show();
         }
     }
 
